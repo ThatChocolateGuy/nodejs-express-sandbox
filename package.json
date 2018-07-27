@@ -1,0 +1,25 @@
+{
+  "name": "app",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "nodemon ./bin/www"
+  },
+  "dependencies": {
+    "bootstrap": "^4.1.2",
+    "constantinople": "^3.1.2",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "express": "^4.16.3",
+    "express-hbs": "^1.0.4",
+    "express-session": "^1.15.6",
+    "express-validator": "^5.2.0",
+    "http-errors": "~1.6.2",
+    "jquery": "^3.3.1",
+    "jstransformer": "^1.0.0",
+    "mongodb": "^3.1.1",
+    "morgan": "~1.9.0",
+    "nodemon": "^1.18.3",
+    "popper.js": "^1.14.3"
+  }
+}
