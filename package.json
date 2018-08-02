@@ -18,6 +18,7 @@
     "jquery": "^3.3.1",
     "jstransformer": "^1.0.0",
     "mongodb": "^3.1.1",
+    "mongoose": "^5.2.5",
     "morgan": "~1.9.0",
     "nodemon": "^1.18.3",
     "popper.js": "^1.14.3"

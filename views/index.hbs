@@ -2,21 +2,17 @@
 <p>Welcome to {{ title }}</p>
 
 <h2> {{ titleCondition }} </h2>
-{{#if condition}}
-  condition is met
-{{ else }}
-  condition not met
-{{/if}}
+{{#if condition}} condition is met {{ else }} condition not met {{/if}}
 
-<br><br>
+<br>
+<br>
 
 <h2> {{ titleArray }} </h2>
-{{#each anyArray as | val key |}}
-  Element {{ key }} is: {{ val }}
-  <br>
-{{/each}}
+{{#each anyArray as | val key |}} Element {{ key }} is: {{ val }}
+<br> {{/each}}
 
-<br><br>
+<br>
+<br>
 
 <h2> {{ titlePost }} </h2>
 <form action="/test/submit" method="POST">
@@ -24,36 +20,50 @@
   <button>Submit</button>
 </form>
 
-<br><br>
+<br>
+<br>
 
 <h2> {{ titleValidation }} </h2>
 {{#if success }}
-  <section class="success">
-    <h3>Successful Validation</h3>
-  </section>
-{{ else }}
+<section class="success">
+  <h3>Successful Validation</h3>
+</section>
+{{ else }} 
   {{#if errors }}
-    <section class="errors">
-      <ul>
-        {{#each errors }}
-          <li> {{ this.msg }} </li>
-        {{/each}}
-      </ul>
-    </section>
+  <section class="errors">
+    <ul>
+      {{#each errors }}
+      <li> {{ this.msg }} </li>
+      {{/each}}
+    </ul>
+  </section>
   {{/if}}
-  <form action="/submit" method="POST">
-    <div class="input">
-      <label for="email">E-Mail</label>
-      <input type="text" id="email" name="email">
-    </div>
-    <div class="input">
-      <label for="password">Password</label>
-      <input type="password" id="password" name="password">
-    </div>
-    <div class="input">
-      <label for="confirmPassword">E-Mail</label>
-      <input type="password" id="confirmPassword" name="confirmPassword">
-    </div>
-    <button type="submit">Sign Up</button>
-  </form>
+<form action="/submit" method="POST">
+  <div class="input">
+    <label for="email">E-Mail</label>
+    <input type="text" id="email" name="email">
+  </div>
+  <div class="input">
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password">
+  </div>
+  <div class="input">
+    <label for="confirmPassword">E-Mail</label>
+    <input type="password" id="confirmPassword" name="confirmPassword">
+  </div>
+  <button type="submit">Sign Up</button>
+</form>
 {{/if}}
+
+<h2>{{ titleMongo }}</h2>
+<form action="/mongo/insert" method="POST">
+  <div>
+    <input type="text" id="name" name="name" placeholder="Name">
+  </div>
+  <div>
+    <input type="number" id="age" name="age" placeholder="Age">
+  </div>
+  <div>
+    <button type="submit">Insert into DB</button>
+  </div>
+</form>

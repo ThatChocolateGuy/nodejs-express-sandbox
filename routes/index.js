@@ -18,6 +18,7 @@ router.get('/', function (req, res, next) {
     titleArray: 'Array Display',
     titlePost: 'GET & POST Request',
     titleValidation: 'Form Validation',
+    titleMongo: 'DB Insert & Get Data',
     success: req.session.success,
     errors: req.session.errors,
     condition: true,
@@ -43,7 +44,7 @@ router.post('/submit', (req, res) => {
     req.session.success = true;
   }
 
-  res.redirect('/');  
+  res.redirect('/');
 });
 
 module.exports = router;

@@ -7,14 +7,12 @@ var hbs = require('express-hbs');
 var expressValidator = require('express-validator');
 var expressSession = require('express-session');
 
-//MongoDB Import
-const MongoDB = require('./mongo');
-
 // DEFINE ROUTES HERE
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var testRouter = require('./routes/test');
-// var mongoRouter = require('./routes/mongo_client');
+var mongoRouter = require('./routes/mongo_client');
+var mongooseRouter = require('./routes/mongoose_client');
 
 var app = express();
 
@@ -41,7 +39,8 @@ app.use(expressSession({
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/test', testRouter);
-// app.use('/mongo', mongoRouter);
+app.use('/mongo', mongoRouter);
+app.use('/mongoose', mongooseRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

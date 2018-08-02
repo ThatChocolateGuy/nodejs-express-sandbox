@@ -1,0 +1,25 @@
+<h1> Mongodebe Page </h1>
+{{#if data}} Data Inserted <br>
+<br>
+<form action="/mongo/get-data" method="GET">
+    <button type="submit"> Get MongoDB Data </button>
+</form>
+{{else}} Try the Mongoose way instead... <br>
+    <br>
+    <form action="/mongoose/get-data" method="POST">
+        <input type="image" disabled="disabled" src="/images/12%20-%20VESKCfh.jpg" alt="" height="120px"> <br>
+        <input type="text" name="name" id="name"> <br>
+        <input type="number" name="age" id="age"> <br>
+        <button type="submit"> Get Mongoose Data </button>
+    </form>
+{{/if}}
+
+{{#each items}}
+<br>
+ID: {{this._id}} <br>
+Name: {{this.name}} <br>
+Age: {{this.age}} <br>
+<br>
+<img src="{{this.image}}" alt="" height="120px"><br>
+<br>
+{{/each}}
