@@ -1,17 +1,17 @@
 <h1> Mongodebe Page </h1>
 {{#if data}} Data Inserted <br>
+
 <br>
 <form action="/mongo/get-data" method="GET">
     <button type="submit"> Get MongoDB Data </button>
 </form>
 {{else}} Try the Mongoose way instead... <br>
-    <br>
-    <form action="/mongoose/get-data" method="POST">
-        <input type="image" disabled="disabled" src="/images/12%20-%20VESKCfh.jpg" alt="" height="120px"> <br>
-        <input type="text" name="name" id="name"> <br>
-        <input type="number" name="age" id="age"> <br>
-        <button type="submit"> Get Mongoose Data </button>
-    </form>
+<br>
+<form action="/mongoose/insert-and-get-data" method="POST">
+    <input type="text" name="name" id="name" placeholder="Name"> <br>
+    <input type="number" name="age" id="age" placeholder="Age"> <br>
+    <input type="image" name="image" id="image" src="/images/12%20-%20VESKCfh.jpg" alt="Insert and Get Mongoose" height="101px"> <br>
+</form>
 {{/if}}
 
 {{#each items}}
@@ -23,3 +23,21 @@ Age: {{this.age}} <br>
 <img src="{{this.image}}" alt="" height="120px"><br>
 <br>
 {{/each}}
+
+{{#if renderCrudButtons}}
+<br>
+Update Data: <br>
+<form action="/mongoose/update" method="post">
+    <input type="text" name="id" id="id" placeholder="ID"> <br>
+    <input type="text" name="updateName" id="updateName" placeholder="Name"> <br>
+    <input type="number" name="updateAge" id="updateAge" placeholder="Age"> <br>
+    <button type="submit">Update</button>
+</form>
+<br>
+<br>
+Delete Data: <br>
+<form action="/mongoose/delete" method="post">
+    <input type="text" name="id" id="id" placeholder="ID"> <br>
+    <button type="submit">Delete</button>
+</form>
+{{/if}}
